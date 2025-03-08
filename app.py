@@ -55,7 +55,7 @@ def handle_message(event):
             {"role": "user", "content": text},
         ]
     )
-    reply = response.choices[0].message['content']
+    reply = response.choices[0].message.content
     api.reply_message(event.reply_token, TextSendMessage(text=reply))
 
 if __name__ == "__main__":
